@@ -282,6 +282,25 @@ export const fetchPropertyDetails = (id: string) => {
     },
     include: {
       profile: true,
+      bookings: {
+        select: {
+          amount: true,
+        },
+      },
     },
   });
 };
+
+export const createBookingAction = async () => {
+  return { message: "create booking" };
+};
+
+// export const bookingAmountAction = (prevState: any, formData: FormData) => {
+//   try {
+//     const rawData = Object.fromEntries(formData);
+//     const validatedFields = validateWithZodSchema(profileSchema, rawData);
+//     return { message: "Item Added" };
+//   } catch (error) {
+//     return renderError(error);
+//   }
+// };

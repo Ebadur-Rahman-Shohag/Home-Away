@@ -90,3 +90,10 @@ export const propertySchema = z.object({
   }),
   amenities: z.string(),
 });
+
+export const bookingSchema = z.object({
+  amount: z.coerce.number().int().min(0, {
+    message: "price must be a positive number.",
+  }),
+  })
+
