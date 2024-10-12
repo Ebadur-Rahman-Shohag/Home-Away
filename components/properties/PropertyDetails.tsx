@@ -2,22 +2,20 @@ import { formatQuantity } from "@/utils/format";
 
 type PropertyDetailsProps = {
   details: {
-    bedrooms: number;
-    baths: number;
-    guests: number;
-    beds: number;
+    colors: number;
+    sizes: number;
+    types: number;
   };
 };
 
 function PropertyDetails({
-  details: { bedrooms, baths, guests, beds },
+  details: { colors, sizes, types },
 }: PropertyDetailsProps) {
   return (
     <p className="text-md font-light space-x-4 ">
-      <span>{formatQuantity(bedrooms, "bedroom")} </span>
-      <span>{formatQuantity(baths, "bath")} </span>
-      <span>{formatQuantity(guests, "guest")} </span>
-      <span>{formatQuantity(beds, "bed")}</span>
+      <span>{formatQuantity(colors, "color")} </span>
+      <span>{formatQuantity(sizes, "size")} </span>
+      <span>{formatQuantity(types, "type")}</span>
     </p>
   );
 }

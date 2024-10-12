@@ -76,17 +76,14 @@ export const propertySchema = z.object({
     }
   ),
   country: z.string(),
-  guests: z.coerce.number().int().min(0, {
+  colors: z.coerce.number().int().min(0, {
     message: "guest amount must be a positive number.",
   }),
-  bedrooms: z.coerce.number().int().min(0, {
+  sizes: z.coerce.number().int().min(0, {
     message: "bedrooms amount must be a positive number.",
   }),
-  beds: z.coerce.number().int().min(0, {
+  types: z.coerce.number().int().min(0, {
     message: "beds amount must be a positive number.",
-  }),
-  baths: z.coerce.number().int().min(0, {
-    message: "bahts amount must be a positive number.",
   }),
   amenities: z.string(),
 });
@@ -95,5 +92,4 @@ export const bookingSchema = z.object({
   amount: z.coerce.number().int().min(0, {
     message: "price must be a positive number.",
   }),
-  })
-
+});

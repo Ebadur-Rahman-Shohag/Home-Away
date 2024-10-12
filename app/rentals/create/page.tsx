@@ -57,10 +57,9 @@ function CreateProperty() {
           <h3 className="text-lg mt-8 mb-4 font-medium">
             Accommodation Details
           </h3>
-          <CounterInput detail="guests" />
-          <CounterInput detail="bedrooms" />
-          <CounterInput detail="beds" />
-          <CounterInput detail="baths" />
+          <CounterInput detail="colors" />
+          <CounterInput detail="sizes" />
+          <CounterInput detail="types" />
           {/* Amnities */}
           <h3 className="text-lg mt-10 mb-6 font-medium">Amenities</h3>
           <AmenitiesInput />
