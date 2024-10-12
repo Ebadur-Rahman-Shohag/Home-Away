@@ -1,4 +1,7 @@
 import { IconType } from "react-icons";
+import { FaMale,FaFemale,FaChild  } from "react-icons/fa";
+import { GiTShirt,GiArmoredPants,GiRunningShoe,GiClothes,GiNecklaceDisplay,GiDress,GiSombrero    } from "react-icons/gi";
+
 import { MdCabin } from "react-icons/md";
 
 import { TbCaravan, TbTent, TbBuildingCottage } from "react-icons/tb";
@@ -14,57 +17,57 @@ type Category = {
 };
 
 export type CategoryLabel =
-  | "cabin"
-  | "tent"
-  | "airstream"
-  | "cottage"
-  | "container"
-  | "caravan"
-  | "tiny"
-  | "magic"
-  | "warehouse"
-  | "lodge";
+  | "men"
+  | "women"
+  | "children"
+  | "shirts"
+  | "pants"
+  | "shoes"
+  | "suits"
+  | "ties"
+  | "saree"
+  | "hats";
 
 export const categories: Category[] = [
   {
-    label: "cabin",
-    icon: MdCabin,
+    label: "men",
+    icon: FaMale,
   },
   {
-    label: "airstream",
-    icon: PiVan,
+    label: "women",
+    icon: FaFemale,
   },
   {
-    label: "tent",
-    icon: TbTent,
+    label: "children",
+    icon: FaChild,
   },
   {
-    label: "warehouse",
-    icon: PiWarehouse,
+    label: "shirts",
+    icon: GiTShirt,
   },
   {
-    label: "cottage",
-    icon: TbBuildingCottage,
+    label: "pants",
+    icon: GiArmoredPants,
   },
   {
-    label: "magic",
-    icon: GiMushroomHouse,
+    label: "shoes",
+    icon: GiRunningShoe ,
   },
   {
-    label: "container",
-    icon: GoContainer,
+    label: "suits",
+    icon: GiClothes ,
   },
   {
-    label: "caravan",
-    icon: TbCaravan,
+    label: "ties",
+    icon: GiNecklaceDisplay ,
   },
 
   {
-    label: "tiny",
-    icon: PiLighthouse,
+    label: "saree",
+    icon: GiDress ,
   },
   {
-    label: "lodge",
-    icon: GiWoodCabin,
+    label: "hats",
+    icon: GiSombrero ,
   },
 ];

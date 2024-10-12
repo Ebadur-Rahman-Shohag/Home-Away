@@ -28,9 +28,7 @@ export default function LinksDropdown() {
       <DropdownMenuContent className="w-52" align="start" sideOffset={10}>
         <SignedOut>
           <DropdownMenuItem>
-            <Link href="/">
-              <HomePage />
-            </Link>
+            <Link href="/">HomePage</Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem>

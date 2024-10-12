@@ -44,7 +44,13 @@ function CreateProperty() {
           />
           {/* Countries */}
           <div className="grid sm:grid-cols-2 gap-8 mt-4">
-            <CountriesInput />
+            {/* <CountriesInput /> */}
+            <FormInput
+              name="country"
+              type="text"
+              label="Location (20 limit)"
+              defaultValue="Dhaka"
+            />
             <ImageInput />
           </div>
           {/* Counter */}
