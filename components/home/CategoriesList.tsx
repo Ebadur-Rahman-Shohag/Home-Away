@@ -1,15 +1,19 @@
 import { categories } from "@/utils/categories";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import PriceSearch from "./PriceSearch";
 import Link from "next/link";
 
 function CategoriesList({
   category,
   search,
+  price
 }: {
   category?: string;
   search?: string;
+  price?: number;
 }) {
   const searchTerm = search ? `&search=${search}` : "";
+  const priceTerm = price ? `&price=${price}` : "";
   return (
     <section>
       <ScrollArea className="py-6">
@@ -19,7 +23,7 @@ function CategoriesList({
             return (
               <Link
                 key={item.label}
-                href={`/?category=${item.label}${searchTerm}`}
+                href={`/?category=${item.label}${searchTerm}${priceTerm}`}
               >
                 <article
                   className={`p-3 flex flex-col items-center cursor-pointer duration-300  hover:text-primary w-[100px] ${
@@ -33,8 +37,10 @@ function CategoriesList({
             );
           })}
         </div>
+        {/* <PriceSearch /> */}
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
+   
     </section>
   );
 }

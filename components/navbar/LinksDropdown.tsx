@@ -33,7 +33,7 @@ export default function LinksDropdown() {
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <Link href="/about">
-              <About />
+              About
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />

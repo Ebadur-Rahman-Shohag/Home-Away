@@ -175,19 +175,30 @@ export const createPropertyAction = async (
 export const fetchProperties = async ({
   search = "",
   category,
+  price,
+  priceFilter = true, // Flag to indicate whether to filter by price
 }: {
   search?: string;
   category?: string;
+  price?: number;
+  priceFilter?: boolean; // New optional parameter
 }) => {
-  const properties = db.property.findMany({
-    where: {
-      category,
-      OR: [
-        { name: { contains: search, mode: "insensitive" } },
-        { tagline: { contains: search, mode: "insensitive" } },
-        { country: { contains: search, mode: "insensitive" } },
-      ],
-    },
+  const whereConditions: any = {
+    ...(category && { category }),
+    OR: [
+      { name: { contains: search, mode: "insensitive" } },
+      { tagline: { contains: search, mode: "insensitive" } },
+      { country: { contains: search, mode: "insensitive" } },
+    ],
+  };
+
+  // Conditionally include price filtering
+  if (priceFilter && price !== undefined) {
+    whereConditions.price = {gte: price }; // Adjust as necessary
+  }
+
+  const properties = await db.property.findMany({
+    where: whereConditions,
     select: {
       id: true,
       name: true,
@@ -200,8 +211,11 @@ export const fetchProperties = async ({
       createdAt: "desc",
     },
   });
+
   return properties;
 };
+
+
 
 //fetch favoritesID
 export const fetchFavoriteId = async ({

@@ -6,13 +6,16 @@ import type { PropertyCardProps } from "@/utils/types";
 async function PropertiesContainer({
   category,
   search,
+  price,
 }: {
   category?: string;
   search?: string;
+  price?: number;
 }) {
   const properties: PropertyCardProps[] = await fetchProperties({
     category,
     search,
+    price
   });
 
   if (properties.length === 0) {
