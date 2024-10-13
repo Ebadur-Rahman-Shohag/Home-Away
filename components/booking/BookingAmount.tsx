@@ -5,6 +5,12 @@ import { SubmitButton } from "../form/Buttons";
 import { useState } from "react";
 import { useProperty } from "@/utils/store"; // Assuming this is your Zustand store
 
+type BookingWrapperProps = {
+  propertyId: string;
+  price: number;
+  amount: number;
+};
+
 function BookingAmount() {
   const [value, setValue] = useState<number | undefined>();
 

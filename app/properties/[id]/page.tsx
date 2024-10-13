@@ -39,7 +39,6 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const firstName = property.profile.firstName;
   const profileImage = property.profile.profileImage;
 
-  const amount = 0;
 
   return (
     <section>
@@ -71,7 +70,6 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <DynamicBookingWrapper
             propertyId={property.id}
             price={property.price}
-            amount={amount}
           />
         </div>
       </section>
