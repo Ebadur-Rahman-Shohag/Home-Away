@@ -5,9 +5,10 @@ import PropertyRating from "./PropertyRating";
 import FavoriteToggleButton from "./FavoriteToggleButton";
 import { PropertyCardProps } from "@/utils/types";
 import { formatCurrency } from "@/utils/format";
+import { Badge } from "@/components/ui/badge";
 
 function PropertyCard({ property }: { property: PropertyCardProps }) {
-  const { name, image, price } = property;
+  const { name, image, price, discount } = property;
   const { country, id: propertyId, tagline } = property;
 
   return (
@@ -34,7 +35,9 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
         </p>
         <div className="flex justify-between items-center mt-1">
           <p className="text-sm mt-1 ">
-            <span className="font-semibold">{formatCurrency(price)} item</span>
+            <span className="font-semibold">
+              {formatCurrency(price - discount)} <del>{price}</del>/item
+            </span>
           </p>
           {/* country and flag */}
           <CountryFlagAndName country={country} />
@@ -43,6 +46,11 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
       <div className="absolute top-5 right-5 z-5">
         {/* favorite toggle button */}
         <FavoriteToggleButton propertyId={propertyId} />
+      </div>
+      <div className="absolute top-5 left-5 z-5 text-white">
+        <Badge variant="destructive">
+          {((discount / price) * 100).toFixed(2)}%OFF
+        </Badge>
       </div>
     </article>
   );

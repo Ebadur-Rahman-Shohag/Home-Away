@@ -12,6 +12,7 @@ export type PropertyCardProps = {
   tagline: string;
   country: string;
   price: number;
+  discount: number;
 };
 
 // export type Booking = {

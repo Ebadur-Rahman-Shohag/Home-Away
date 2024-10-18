@@ -9,6 +9,7 @@ import CountriesInput from "@/components/form/CountriesInput";
 import ImageInput from "@/components/form/ImageInput";
 import CounterInput from "@/components/form/CounterInput";
 import AmenitiesInput from "@/components/form/AmenitiesInput";
+import DiscountInput from "@/components/form/DiscountInput";
 
 function CreateProperty() {
   return (
@@ -34,6 +35,8 @@ function CreateProperty() {
             />
             {/* price */}
             <PriceInput />
+            {/* discount */}
+            <DiscountInput />
             {/* categories */}
             <CategoriesInput />
           </div>

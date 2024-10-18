@@ -38,7 +38,7 @@ function BookingAmount() {
           Amount
         </Label>
         <Input
-          //   defaultValue="0"
+          defaultValue="0"
           type="number"
           name="amount"
           value={value} // Controlled input

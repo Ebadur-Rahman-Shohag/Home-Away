@@ -65,6 +65,9 @@ export const propertySchema = z.object({
   price: z.coerce.number().int().min(0, {
     message: "price must be a positive number.",
   }),
+  discount: z.coerce.number().int().min(0, {
+    message: "discount must be a positive number.",
+  }),
   category: z.string(),
   description: z.string().refine(
     (description) => {
@@ -77,15 +80,21 @@ export const propertySchema = z.object({
   ),
   country: z.string(),
   colors: z.coerce.number().int().min(0, {
-    message: "guest amount must be a positive number.",
+    message: "colors amount must be a positive number.",
   }),
   sizes: z.coerce.number().int().min(0, {
-    message: "bedrooms amount must be a positive number.",
+    message: "sizes amount must be a positive number.",
   }),
   types: z.coerce.number().int().min(0, {
-    message: "beds amount must be a positive number.",
+    message: "types amount must be a positive number.",
   }),
   amenities: z.string(),
+});
+
+export const createReviewSchema = z.object({
+  propertyId: z.string(),
+  rating: z.coerce.number().int().min(1).max(5),
+  comment: z.string().min(10).max(1000),
 });
 
 export const bookingSchema = z.object({

@@ -20,8 +20,9 @@ export default function HomePage({
       <CategoriesList
         category={searchParams?.category}
         search={searchParams?.search}
+        price={price}
       />
-      <PriceSearch />
+      <PriceSearch/>
       <Suspense fallback={<LoadingCards />}>
         <PropertiesContainer
           category={searchParams?.category}

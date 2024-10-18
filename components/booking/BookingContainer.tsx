@@ -6,7 +6,7 @@ import BookingForm from "./BookingForm";
 function BookingContainer() {
   const { amount } = useProperty((state) => state);
 
-  if (!amount) return null;
+  if (!amount && amount<=0) return null;
 
   return (
     <div className="w-full mt-8 md:mt-16">

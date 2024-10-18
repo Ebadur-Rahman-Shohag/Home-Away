@@ -4,18 +4,19 @@ import { Separator } from "@/components/ui/separator";
 import { useProperty } from "@/utils/store";
 import { formatCurrency } from "@/utils/format";
 function BookingForm() {
-  const { amount, price } = useProperty((state) => state);
+  const { amount, price,discount } = useProperty((state) => state);
 
-  const { subTotal, cleaning, service, tax, orderTotal } = calculateTotals({
+  const { subTotal, shippingCost, deliverCost, tax, orderTotal } = calculateTotals({
     amount,
     price,
+    discount
   });
   return (
     <Card className="p-8 mb-4">
       <CardTitle className="mb-8">Summary </CardTitle>
-      <FormRow label={`$${price} x ${amount} items`} amount={subTotal} />
-      <FormRow label="Cleaning Fee" amount={cleaning} />
-      <FormRow label="Service Fee" amount={service} />
+      <FormRow label={`$${price-discount} x ${amount} items`} amount={subTotal} />
+      <FormRow label="Shipping Cost" amount={shippingCost} />
+      <FormRow label="Delivery Cost" amount={deliverCost} />
       <FormRow label="Tax" amount={tax} />
       <Separator className="mt-4" />
       <CardTitle className="mt-8">

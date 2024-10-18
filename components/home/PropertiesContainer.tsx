@@ -15,7 +15,7 @@ async function PropertiesContainer({
   const properties: PropertyCardProps[] = await fetchProperties({
     category,
     search,
-    price
+    price,
   });
 
   if (properties.length === 0) {

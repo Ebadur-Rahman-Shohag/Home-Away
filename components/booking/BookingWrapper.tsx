@@ -8,16 +8,18 @@ import BookingAmount from "./BookingAmount";
 type BookingWrapperProps = {
   propertyId: string;
   price: number;
+  discount: number;
 };
 export default function BookingWrapper({
   propertyId,
   price,
+  discount,
 }: BookingWrapperProps) {
   useEffect(() => {
     useProperty.setState({
       propertyId,
       price,
-
+      discount,
     });
   }, []);
   return (

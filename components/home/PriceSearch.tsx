@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 
 const PriceSearch: React.FC = () => {
   const router = useRouter();
-  const [rangeValue, setRangeValue] = useState<number>(50); // Default value of 50
+  const [rangeValue, setRangeValue] = useState<number>(100); // Default value of 50
 
   const handleRangeChange = (value: number[]) => {
     setRangeValue(value[0]); // Extract the first value from the array and update the state
@@ -21,7 +21,7 @@ const PriceSearch: React.FC = () => {
   };
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-10">
       <Label htmlFor="rangeInput">{rangeValue}</Label>
       <Slider
         id="rangeInput"
@@ -31,7 +31,9 @@ const PriceSearch: React.FC = () => {
         step={1}
         onValueChange={handleRangeChange} // Correctly update the state
       />
-      <Button onClick={handleClick}>Filter By Price</Button>
+      <Button size="sm" onClick={handleClick}>
+        Filter By Price
+      </Button>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { SignInButton } from "@clerk/nextjs";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { LuPenSquare, LuTrash2 } from "react-icons/lu";
 
+
 type SubmitButtonProps = {
   className?: string;
   text?: string;
@@ -102,3 +103,4 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
     </Button>
   );
 };
+
