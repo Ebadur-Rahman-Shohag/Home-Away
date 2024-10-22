@@ -27,7 +27,7 @@ export default function BookingWrapper({
       price,
       discount,
     });
-  }, []);
+  }, [discount,price,propertyId]);
   return (
     <>
       <BookingAmount />
