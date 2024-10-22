@@ -28,10 +28,8 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
     });
   }
   const {
-    totalNights,
+    amount,
     orderTotal,
-    checkIn,
-    checkOut,
     property: { image, name },
   } = booking;
 
@@ -50,9 +48,8 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
             product_data: {
               name: `${name}`,
               images: [image],
-              description: `Stay in this wonderful place for ${totalNights} nights, from ${formatDate(
-                checkIn
-              )} to ${formatDate(checkOut)}. Enjoy your stay!`,
+              description: `Buy atleast ${amount} woderful product,`
+
             },
             unit_amount: orderTotal * 100,
           },
