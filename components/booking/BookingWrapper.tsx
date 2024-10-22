@@ -2,7 +2,7 @@
 
 import { useProperty } from "@/utils/store";
 import BookingContainer from "./BookingContainer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BookingAmount from "./BookingAmount";
 
 type BookingWrapperProps = {
@@ -15,6 +15,12 @@ export default function BookingWrapper({
   price,
   discount,
 }: BookingWrapperProps) {
+  // const [dataFromChild, setDataFromChild] = useState<boolean>(true);
+
+  // const handleDataFromChild = (data: boolean) => {
+  //   setDataFromChild(data);
+  // };
+
   useEffect(() => {
     useProperty.setState({
       propertyId,

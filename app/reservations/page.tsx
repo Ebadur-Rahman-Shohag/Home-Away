@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Stats from "@/components/reservations/Stats";
 
 async function ReservationsPage() {
   const reservations = await fetchReservations();
@@ -26,6 +27,7 @@ async function ReservationsPage() {
       <h4 className="mb-4 capitalize">
         total reservations : {reservations.length}
       </h4>
+      <Stats />
       <Table>
         <TableCaption>A list of your recent reservations.</TableCaption>
         <TableHeader>

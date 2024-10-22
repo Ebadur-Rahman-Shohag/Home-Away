@@ -1,34 +1,34 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { SubmitButton } from "../form/Buttons";
-import { useState } from "react";
 import { useProperty } from "@/utils/store"; // Assuming this is your Zustand store
 
-type BookingWrapperProps = {
-  propertyId: string;
-  price: number;
-  amount: number;
-};
-
 function BookingAmount() {
-  const [value, setValue] = useState<number | undefined>();
+  const [value, setValue] = useState<number | undefined>(0); // Initialize value with 0
+  const [submitted, setSubmitted] = useState(false); // To track if the form is submitted
 
   // Get the setter function from your Zustand store
-  const setProperty = useProperty((state) => state.setProperty); // Adjust according to your Zustand store structure
+  const setProperty = useProperty((state) => state.setProperty);
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (value !== undefined && value > 0) {
-      setProperty(value); // Update the Zustand store with the form value
-    }
+    setSubmitted(true); // Mark as submitted when the form is submitted
   };
+
+  // Update Zustand store when form is submitted and value is valid
+  useEffect(() => {
+    if (submitted && value !== undefined && value > 0) {
+      setProperty(value); // Update Zustand store with the form value
+      setSubmitted(false); // Reset the submission flag after the update
+    }
+  }, [submitted, value, setProperty]);
 
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(Number(e.target.value));
+    setValue(Number(e.target.value)); // Update value as the input changes
   };
 
   return (
