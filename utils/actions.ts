@@ -284,6 +284,7 @@ export const fetchFavorites = async () => {
           price: true,
           country: true,
           image: true,
+          discount:true,
         },
       },
     },
