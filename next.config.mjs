@@ -12,6 +12,9 @@ const nextConfig = {
             },
         ],
     },
+    env: {
+        REACT_DEVTOOLS_DISABLED: (process.env.NODE_ENV === 'production').toString(), // Convert to string
+    },
 };
 
 export default nextConfig;

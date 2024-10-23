@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description: "Feel at home, away from home.",
 };
 
+// Disable React DevTools in production
+if (process.env.NODE_ENV === 'production') {
+  if (typeof window !== 'undefined' && window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+    window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
+  }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
