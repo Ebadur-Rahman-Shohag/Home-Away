@@ -8,7 +8,7 @@ function About() {
           We love
         </h1>
         <div>
-          <Button className="text-4xl p-8">Shokti</Button>
+          <Button className="text-4xl p-8">Website Name</Button>
         </div>
       </div>
       <p className="mt-6 text-lg leading-8 max-w-2xl mx-auto">

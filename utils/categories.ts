@@ -2,15 +2,6 @@ import { IconType } from "react-icons";
 import { FaMale,FaFemale,FaChild  } from "react-icons/fa";
 import { GiTShirt,GiArmoredPants,GiRunningShoe,GiClothes,GiNecklaceDisplay,GiDress,GiSombrero    } from "react-icons/gi";
 
-import { MdCabin } from "react-icons/md";
-
-import { TbCaravan, TbTent, TbBuildingCottage } from "react-icons/tb";
-
-import { GiWoodCabin, GiMushroomHouse } from "react-icons/gi";
-import { PiWarehouse, PiLighthouse, PiVan } from "react-icons/pi";
-
-import { GoContainer } from "react-icons/go";
-
 type Category = {
   label: CategoryLabel;
   icon: IconType;

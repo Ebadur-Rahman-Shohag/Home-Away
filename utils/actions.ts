@@ -1,6 +1,5 @@
 "use server";
 
-import { object } from "zod";
 import {
   createReviewSchema,
   imageSchema,
@@ -9,10 +8,9 @@ import {
   validateWithZodSchema,
 } from "./schemas";
 import db from "./db";
-import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
+import {clerkClient, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { error } from "console";
 import { uploadImage } from "./supabase";
 import { calculateTotals } from "./calculateTotals";
 import { formatDate } from "@/utils/format";
@@ -27,7 +25,6 @@ const getAuthUser = async () => {
 };
 
 const renderError = (error: unknown): { message: string } => {
-  console.log(error);
   return {
     message: error instanceof Error ? error.message : "An error occurred",
   };
@@ -408,7 +405,7 @@ export const findExistingReview = async (
   });
 };
 
-// fet property rating
+// fetch property rating
 export async function fetchPropertyRating(propertyId: string) {
   const result = await db.review.groupBy({
     by: ["propertyId"],

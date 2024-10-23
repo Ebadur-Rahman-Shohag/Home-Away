@@ -7,6 +7,7 @@ import ReviewCard from "@/components/reviews/ReviewCard";
 import Title from "@/components/properties/Title";
 import FormContainer from "@/components/form/FormContainer";
 import { IconButton } from "@/components/form/Buttons";
+
 async function ReviewsPage() {
   const reviews = await fetchPropertyReviewsByUser();
   if (reviews.length === 0) return <EmptyList />;

@@ -1,6 +1,5 @@
 import { categories } from "@/utils/categories";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
-import PriceSearch from "./PriceSearch";
 import Link from "next/link";
 
 function CategoriesList({
